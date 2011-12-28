@@ -5,7 +5,7 @@ Add any slots, variables, functions or so that you want.
 in as a string that looks like: E5)
 """
 
-from board import Ship
+from bs import Ship
 
 class Player():
     __slots__=('name', 'ships', 'board')

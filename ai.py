@@ -4,13 +4,13 @@ Add any slots, variables, functions or so that you want.
 (any positions should be like this: E5)
 """
 
-from board import Ship
+from bs import Ship
 
 class AI():
     __slots__=('name', 'ships', 'board')
-    def __init__(self,name):
+    def __init__(self):
         self.ships=[Ship('Cruiser'),Ship('Battleship'),Ship('Submarine'),Ship('Cruiser'),Ship('FishBoat')]
-        self.name=name
+        self.name="Computer"
         self.board=None
     def sunkShip(ship):
         self.ships.remove(ship)

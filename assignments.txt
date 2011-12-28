@@ -1,4 +1,4 @@
-Engine - Conor
-Player Class
-AI Class
-GUI
+play - Conor
+bs - Conor
+Player Class - 
+AI Class - 

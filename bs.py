@@ -7,18 +7,23 @@ class Board():
         for i in range(1,10):
             l=Line(Point(0,i*75),Point(675,i*75))
             l2=Line(Point(i*75,0),Point(i*75,675))
+            l1=Line(Point(0,i*75),Point(675,i*75))
+            l22=Line(Point(i*75,0),Point(i*75,675))
             if i!=9:
                 t=Text(Point((75/2)+(i*75),675-(75/2)), str(i))
+                t1=Text(Point((75/2)+(i*75),675-(75/2)), str(i))
                 t.draw(win)
-                t.draw(win2)
+                t1.draw(win2)
             if let !=[]:
-                t2=Text(Point(75/2,((i-1)*75)+(75/2)), let.pop())
+                le=let.pop()
+                t2=Text(Point(75/2,((i-1)*75)+(75/2)), le)
+                t22=Text(Point(75/2,((i-1)*75)+(75/2)), le)
                 t2.draw(win)
-                t2.draw(win2)
+                t22.draw(win2)
             l.draw(win)
-            l.draw(win2)
+            l1.draw(win2)
             l2.draw(win)
-            l2.draw(win2)
+            l22.draw(win2)
         self.win=win
         self.radar=win2
     def shipPlacement(self,p1,p2):
@@ -40,7 +45,7 @@ class Board():
         self.win.close()
 def interpret(pos):
     d={'A':75/2,'B':75+(75/2),'C':150+(75/2),'D':225+(75/2),'E':300+(75/2),'F':375+(75/2),'G':450+(75/2),'H':525+(75/2)}
-    if isinstance(pos,List):
+    if isinstance(pos,list):
         l=len(pos)
         if isEven(l):
             x1=75/2+(75*int(pos[l//2-1][1]))
@@ -65,8 +70,8 @@ class mark():
             self.rep.setFill('white')
     def draw(self,win):
         self.rep.draw(win)
-class ship():
-    def __init__(name):
+class Ship():
+    def __init__(self,name):
         self.name=name
         self.pic=''
         self.pos=[]
